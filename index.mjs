@@ -1,3 +1,11 @@
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const express = require("express")
+const app = express()
+const config = require("./config.json")
+const port = process.env.PORT || config.port
+import fetch from 'node-fetch';
+
 import Server from 'bare-server-node';
 import http from 'http';
 import nodeStatic from 'node-static';
@@ -6,16 +14,27 @@ import nodeStatic from 'node-static';
 const bare =  new Server('/bare/', '');
 const serve = new nodeStatic.Server('static/');
 
-const server = http.createServer();
+app.use(express.static("./static", {
+    extensions: ["html"]
+}));
 
-server.on('request', (request, response) => {
-    if (bare.route_request(request, response)) return true;
-    serve.serve(request, response);
+app.get("/", function(req, res){
+    res.sendFile("index.html", {root: "./static"});
 });
 
-server.on('upgrade', (req, socket, head) => {
-	if(bare.route_upgrade(req, socket, head))return;
-	socket.end();
+app.get("/suggestions", function(req, res){
+async function getsuggestions() {
+var term = req.query.q || "";
+var response = await fetch("https://duckduckgo.com/ac/?q=" + term + "&type=list");
+var result = await response.json();
+var suggestions = result[1]
+res.send(suggestions)
+}
+getsuggestions()
 });
 
-server.listen(process.env.PORT || 8080);
+
+
+app.listen(port, () => {
+  console.log(`Tsunami is running at localhost:${port}`)
+})
