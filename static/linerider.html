@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <title>Linerider</title>
+    <style>
+      element.style{
+        height: 100%;
+      }
+    </style>
+</head>
+ 
+<body>
+    
+  <script>
+    window.onload = function() {
+      window.navigator.serviceWorker.register('../sw.js', {
+        scope: '/service/' ,
+      });
+      var iframe = window.document.createElement('iframe');
+      iframe.style.border = 'none';
+      iframe.style.width = '100vw';
+      iframe.style.height = '100vh';
+      iframe.style.margin = '0';
+      iframe.src = 'https://r2.emulatoros.ga/service/hvtrs8%2F-wuw%2Clkngrkdgr%2Ccmm-'
+      window.document.body.appendChild(iframe)
+      window.document.body.style.margin = '0';
+    }
+    
+    
+  </script>
+  <script type="text/javascript">
+     //Declare variables for cloak here
+const local_title = localStorage.getItem("title");
+const local_icon = localStorage.getItem("icon");
+
+//If the window already has title stored in localstorage
+if (window.localStorage.hasOwnProperty("title")) {
+  document.title = local_title;
+}
+//Fetch and set from user's input
+if (window.localStorage.hasOwnProperty("icon")) {
+  document.querySelector("link[rel=icon]").href = local_icon;
+}
+
+//Add Google Analytics
+const gascript = document.createElement("script");
+gascript.setAttribute("async", "");
+gascript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-NSZB9Q5L1N");
+const inlinegascript = document.createElement("script");
+inlinegascript.innerHTML = `window.dataLayer = window.dataLayer || []; 
+function gtag(){dataLayer.push(arguments);} 
+gtag('js', new Date()); 
+gtag('config', 'G-NSZB9Q5L1N');`
+document.head.append(gascript, inlinegascript);
+
+//Semantic - Major.Minor.Patch
+const sArr = [`1`, `4`, `0`];
+const version = "v" + sArr.join(".");
+
+//Fetch visit count
+const visitapi = "https://api.countapi.xyz/update/emulatoros.github.io/8f40b809-76a1-46fd-b76e-6cbd8827df44/?amount=1";
+fetch(visitapi)
+.then((res) => res.json())
+.then((res) => {
+  document.getElementById("visit-count").innerText = " " + parseInt(res.value).toLocaleString("en-US"); //Add commas
+});
+
+//Turn off GSAP null warnings (if present)
+try {
+  gsap.config({
+    nullTargetWarn: false,
+  });
+} catch {
+  //empty b/c no need for return
+}
+     </script>
+   
+ 
+</body>
+ 
+</html>

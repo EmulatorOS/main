@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <title>Skribbl.io</title>
+    <style>
+      element.style{
+        height: 100%;
+      }
+    </style>
+</head>
+ 
+<body>
+    
+  <script>
+    window.onload = function() {
+      window.navigator.serviceWorker.register('../sw.js', {
+        scope: '/service/' ,
+      });
+      var iframe = window.document.createElement('iframe');
+      iframe.style.border = 'none';
+      iframe.style.width = '100vw';
+      iframe.style.height = '100vh';
+      iframe.style.margin = '0';
+      iframe.src = 'https://r2.emulatoros.ga/service/hvtrs8%2F-nmw%2Cge%2Frlcy-pcrcd%7Bmg-eaoeq%2F6122-smlcr%2Fsoaqh'
+      window.document.body.appendChild(iframe)
+      window.document.body.style.margin = '0';
+    }
+    
+    
+  </script>
+   
+ 
+</body>
+ 
+</html>
