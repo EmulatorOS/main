@@ -1,7 +1,11 @@
 var form = document.getElementById('srchbutton');
 var input = document.getElementById('srchinput');
+
 if (localStorage.getItem("search") == null) {
 localStorage.setItem("search", "Google")
+}
+if (localStorage.getItem("proxy") == null) {
+localStorage.setItem("proxy", "Ultraviolet")
 }
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -47,6 +51,7 @@ form.addEventListener('click', async event => {
             removeLoader()
         } else {
             load(url)
+          
         }
 
 
@@ -55,21 +60,21 @@ form.addEventListener('click', async event => {
 
 
 function load(url){
-  let hide = localStorage.getItem("hide");
-  if (hide === 'on'){
+  
     document.getElementById("particles-js").style.display='none';
     var elms = document.querySelectorAll("[id='hide']");
     for(var i = 0; i < elms.length; i++) 
       elms[i].style.display='none';
-    const frame = document.querySelector('.access-frame');
+    const frame =  document.getElementById("surf");
+  const header =  document.getElementById("header");
+  header.style.display = 'none';
     frame.src = __uv$config.prefix + __uv$config.encodeUrl(url);
     frame.style.display = 'block';
-    document.querySelector('.access-panel').style.removeProperty('display');
+  
+  removeLoader()
+  
   }
-  else{
-    window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
-  }
-}
+ 
 
 function isUrl(val = ''){
     if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
@@ -92,6 +97,7 @@ function makeloader(){
   }
   
   function removeLoader(){
+    console.log('remove')
 	document.getElementById("loader-wrapper").style.display='none';
     document.getElementById("loader-wrapper1").style.display='none';
   }
