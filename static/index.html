@@ -10,10 +10,9 @@
 
 <link rel="icon" type="image/x-icon" href="log.png">
 <link rel="shortcut icon" type="image/x-icon" href="log.png">
-<link href="full.css" rel="stylesheet">
+
 <link rel="stylesheet" href="https://emulatoros.github.io/main.css">
 
-<link rel="stylesheet" href="https://emulatoros.github.io/contentpage.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"
   integrity="sha512-8pHNiqTlsrRjVD4A/3va++W1sMbUHwWxxRPWNyVlql3T+Hgfd81Qc6FC5WMXDC+tSauxxzp1tgiAvSKFu1qIlA=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -22,6 +21,9 @@
 <head>
 
   <style>
+    * {
+      box-sizing: inherit;
+    }
     body {
       --light-text: white;
       --dark-text: black;
@@ -663,6 +665,18 @@
       z-index: 11;
       cursor: pointer;
     }
+
+    .sugg {
+color: var(--light-text);
+font-size: 20px;
+cursor: pointer;
+padding: 5px;
+padding-left: 10px;
+}
+
+.sugg:hover {
+color: var(--highlight);
+}
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
