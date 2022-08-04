@@ -107,7 +107,9 @@ function closesurf() {
   particles.style.display = "block";
   controls.style.display = "none";
   surf.style.display = "none";
-  
+  document.title = 'EmulatorOS';
+  document.querySelector("link[rel=shortcut icon]").href = 'assets/icon.png';
+  document.querySelector("link[rel=icon]").href = 'assets/icon.png';
   surf.setAttribute("src", "");
   navtitle.innerText = "Loading...";
 }
