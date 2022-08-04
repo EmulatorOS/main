@@ -7,6 +7,12 @@ if (localStorage.getItem("particletheme") == 'neon') {
 
   console.log('neon')
 }
+if (localStorage.getItem("search") == null) {
+  localStorage.setItem("search", "Google")
+  }
+  if (localStorage.getItem("proxy") == null) {
+  localStorage.setItem("proxy", "Ultraviolet")
+  }
 //Declare variables for cloak here
 
 

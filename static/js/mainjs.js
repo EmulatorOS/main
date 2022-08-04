@@ -59,6 +59,7 @@ function pxyopen(url) {
     var surf = document.getElementById("surf");
     var closesurf = document.getElementById("closesurf");
     var reloadsurf = document.getElementById("reloadsurf");
+    var opensurf = document.getElementById("opensurf");
     var controls = document.getElementById("controls");
     var header = document.getElementById("header");
     var particles = document.getElementById("particles-js");
@@ -67,6 +68,7 @@ function pxyopen(url) {
     controls.style.display = "flex";
     surf.style.display = "initial";
     closesurf.style.display = "initial";
+    opensurf.style.display = "initial";
     reloadsurf.style.display = "initial";
     surf.setAttribute("src", getproxy(url));
     document.getElementById("search").value = "";
@@ -104,6 +106,7 @@ function closesurf() {
   var surf = document.getElementById("surf");
   var closesurf = document.getElementById("closesurf");
   var reloadsurf = document.getElementById("reloadsurf");
+  var opensurf = document.getElementById("opensurf");
   var controls = document.getElementById("controls");
   var navtitle = document.getElementById("nav-title");
   var header = document.getElementById("header");
@@ -114,6 +117,7 @@ function closesurf() {
   surf.style.display = "none";
   closesurf.style.display = "none";
   reloadsurf.style.display = "none";
+  opensurf.style.display = "none";
   surf.setAttribute("src", "");
   navtitle.innerText = "Loading...";
 }
@@ -127,7 +131,11 @@ function fullscreensurf() {
   var surf = document.getElementById("surf");
   surf.contentWindow.location.reload();
 }
-
+function opensurf() {
+  var url = document.getElementById("surf").src;
+  var tabOrWindow = window.open(url, '_blank');
+   tabOrWindow.focus();
+}
 var currentproxy = localStorage.getItem("proxy");
 var rhodium = document.getElementById("rhodium");
 var corrosion = document.getElementById("corrosion");

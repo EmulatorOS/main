@@ -1,12 +1,7 @@
 var form = document.getElementById('srchbutton');
 var input = document.getElementById('srchinput');
 
-if (localStorage.getItem("search") == null) {
-localStorage.setItem("search", "Google")
-}
-if (localStorage.getItem("proxy") == null) {
-localStorage.setItem("proxy", "Ultraviolet")
-}
+
 
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get("url") != null) {
