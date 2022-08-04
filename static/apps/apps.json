@@ -17,12 +17,12 @@
     {
         "title": "Twitch",
         "image": "/apps/images/tich.jpg",
-        "location": "/apps/apps.html#aHR0cHM6Ly90d2l0Y2gudHY="
+        "location": "/apps/apps.html#twitch.com"
     },
     {
         "title": "Discord",
         "image": "/apps/images/dd.jpg",
-        "location": "/apps/apps.html#aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcHA="
+        "location": "/apps/apps.html#https://discord.com/login"
     },
     {
         "title": "Tik Tok",
