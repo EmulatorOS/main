@@ -140,12 +140,12 @@ $header.innerHTML = `<nav class="aa-nav">
 </span>
 </div>
 <div class="aa-nav-items">
-  <span class="aa-nav-item"><a href="/home.html" target="_top">Home</a></span>
+  <span class="aa-nav-item"><a href="//emulatoros.github.io/home.html" target="_top">Home</a></span>
   
-  <span class="aa-nav-item"><a href="/" target="_top">Games</a></span>
+  <span class="aa-nav-item"><a href="//emulatoros.github.io/" target="_top">Games</a></span>
   <span class="aa-nav-item"><a href="https://r2.emulatoros.ga/" target="_top">Search</a></span>
-     <span class="aa-nav-item"><a href="/tests.html" target="_top">Tests</a></span>
-  <span class="aa-nav-item"><a href="/settings.html" target="_top">Settings</a></span>
+     <span class="aa-nav-item"><a href="//emulatoros.github.io/tests.html" target="_top">Tests</a></span>
+  <span class="aa-nav-item"><a href="//emulatoros.github.io/settings.html" target="_top">Settings</a></span>
   </div>
 </nav>
 
@@ -157,11 +157,11 @@ $header.innerHTML = `<nav class="aa-nav">
 
 <div class="aa-mobile-overlay">
 <ul class="aa-mobile-nav-items">
-  <li><a href="/home" target="_top">Home</a></li>
-  <li><a href="/" target="_top">Games</a></li>
+  <li><a href="//emulatoros.github.io/home" target="_top">Home</a></li>
+  <li><a href="//emulatoros.github.io/" target="_top">Games</a></li>
   <li><a href="https://r2.emulatoros.ga/" target="_top">Search</a></li>
-  <li><a href="/tests.html" target="_top">Tests</a></li>
-  <li><a href="/settings.html" target="_top">Settings</a></li>
+  <li><a href="//emulatoros.github.io/tests.html" target="_top">Tests</a></li>
+  <li><a href="//emulatoros.github.io/settings.html" target="_top">Settings</a></li>
 </ul>
 </div>`;
 document.body.prepend($header);
