@@ -71,5 +71,5 @@ app.use(function (req, res) {
 
 
 app.listen(port, () => {
-  console.log(`Tsunami is running at localhost:${port}`)
+  console.log(`EmulatorOS is running at localhost:${port}`)
 })
