@@ -1,36 +1,81 @@
-if (localStorage.getItem("particletheme") == 'neon') {
-
-  var cssElm = document.createElement('link');
-  cssElm.setAttribute('href', '/neon.css');
-  cssElm.setAttribute('rel', 'stylesheet');
+if (localStorage.getItem("appearance") == "neon") {
+  var cssElm = document.createElement("link");
+  cssElm.setAttribute("href", "/neon.css");
+  cssElm.setAttribute("rel", "stylesheet");
+  cssElm.setAttribute("id", "neoncss");
   document.head.appendChild(cssElm);
 
-  console.log('neon')
+  console.log("neon");
 }
-if (localStorage.getItem("search") == null) {
-  localStorage.setItem("search", "Google")
+if (localStorage.getItem("background") == null) {
+  localStorage.setItem("background", "default")
   }
-  if (localStorage.getItem("proxy") == null) {
-  localStorage.setItem("proxy", "Ultraviolet")
-  }
-//Declare variables for cloak here
+if (localStorage.getItem("appearance") !== "neon") {
+  if (document.getElementById('neoncss')) {
+  const link = document.getElementById("neoncss");
+  console.log(link);
+  link.remove();
 
+  console.log("remove neon");
+  }
+}
+function setLogo(highlight) {
+  document.querySelector("link[rel='icon']").href = "/assets/icon.png";
+}
+function getLogo(highlight = "#2493ff") {
+  console.log("for later update setlogo()");
+}
+var appearance = localStorage.getItem("appearance");
+
+if (localStorage.hasOwnProperty("appearance")) {
+  document
+    .getElementsByTagName("body")[0]
+    .setAttribute("appearance", appearance);
+  setLogo(
+    getComputedStyle(document.body)
+      .getPropertyValue("--highlight")
+      .replaceAll(" ", "")
+  );
+} else {
+  localStorage.setItem("appearance", "default");
+  document
+    .getElementsByTagName("body")[0]
+    .setAttribute("appearance", "default");
+}
+//Declare variables for cloak here
+const local_title = localStorage.getItem("title");
+const local_icon = localStorage.getItem("icon");
+
+//If the window already has title stored in localstorage
+if (window.localStorage.hasOwnProperty("title")) {
+  document.title = local_title;
+}
+//Fetch and set from user's input
+if (window.localStorage.hasOwnProperty("icon")) {
+  document.querySelector("link[rel=icon]").href = local_icon;
+} else {
+  document.querySelector("link[rel=icon]").href = "/assets/icon.png";
+}
 
 //Add Google Analytics
 const gascript = document.createElement("script");
 gascript.setAttribute("async", "");
-gascript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-NSZB9Q5L1N");
+gascript.setAttribute(
+  "src",
+  "https://www.googletagmanager.com/gtag/js?id=G-NSZB9Q5L1N"
+);
 const inlinegascript = document.createElement("script");
 inlinegascript.innerHTML = `window.dataLayer = window.dataLayer || []; 
 function gtag(){dataLayer.push(arguments);} 
 gtag('js', new Date()); 
-gtag('config', 'G-NSZB9Q5L1N');`
+gtag('config', 'G-NSZB9Q5L1N');`;
 document.head.append(gascript, inlinegascript);
 
 //Semantic - Major.Minor.Patch
 const sArr = [`1`, `4`, `0`];
 const version = "v" + sArr.join(".");
 document.body.style.backgroundColor = "var(--bg-color)";
+document.body.style.fontFamily = "var(--font)";
 //Fetch visit count
 const visitapi = "https://api.countapi.xyz/update/emulatoros.github.io/78c84613-3752-436e-ae7c-29f94d1fc15f/?amount=1";
 fetch(visitapi)
@@ -87,7 +132,7 @@ $(window).scroll(function () {
 
 //Prepend Navbar (using innerHTML because there's no escaped input)
 const $header = document.createElement("header");
- $header.setAttribute('id', 'header');
+$header.setAttribute("id", "header");
 $header.innerHTML = `<nav class="aa-nav">
 <div class="aa-nav-items2">
 <span class="aa-nav-item" >
@@ -130,47 +175,18 @@ document.body.appendChild(px);
 
 window.onmessage = function (e) {
   document.getElementById("user-count").innerText = e.data;
-
 };
-function loadPallet(pal)//function to load pallets
-{
-  sheet = document.querySelector(':root');
-  index = pal.split(";");
 
-  for (x = 0; x < index.length - 1; x++) {
-    varname = index[x].split("/")[0];
-    col = index[x].split("/")[1];
-    sheet.style.setProperty('--' + varname, col);
-  }
-  return sheet;
-}
-pallet = "ubg/#800080;bg/#1F2029;footerbg/#170E1F;link/#0084ff;scroll-active/#717171;scrollbg/#191a21;users-online/#49ff0d";
 
-document.addEventListener('DOMContentLoaded', function () {
-  if (localStorage.getItem("stylepallet") !== "") {
-    pallet = localStorage.getItem("stylepallet");
-  }
-  else {
-    localStorage.setItem("stylepallet", pallet)
-  }
-  loadPallet(pallet);
-});
-function savePallet(pal) {
-  localStorage.setItem("stylepallet", pal)
-  loadPallet(pal);
-  window.location.href = window.location.href
-  window.location.reload()
-}
-function pselection(lin) {
-  localStorage.setItem("plink", lin);
-  console.log(lin)
-}
-function particleS(lin) {
-  localStorage.setItem("particletheme", lin);
-  console.log(lin + ' theme')
-}
 if (localStorage.getItem("plink") === null) {
-  console.log('null')
-  localStorage.setItem("plink", 'r2');
+  console.log("null");
+  localStorage.setItem("plink", "r2");
 }
-function searchGames() { var e = document.getElementById("GameSearch").value.toLowerCase(), a = document.getElementsByClassName("GameName"); for (i = 0; i < a.length; i++)a[i].innerText.toLowerCase().includes(e) ? a[i].setAttribute('style', 'display:inline !important') : a[i].setAttribute('style', 'display:none !important') }
+function searchGames() {
+  var e = document.getElementById("GameSearch").value.toLowerCase(),
+    a = document.getElementsByClassName("GameName");
+  for (i = 0; i < a.length; i++)
+    a[i].innerText.toLowerCase().includes(e)
+      ? a[i].setAttribute("style", "display:inline !important")
+      : a[i].setAttribute("style", "display:none !important");
+}

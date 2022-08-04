@@ -57,9 +57,6 @@ function pxyopen(url) {
   if (localStorage.getItem("proxy") !== null) {
     console.log("!==");
     var surf = document.getElementById("surf");
-    var closesurf = document.getElementById("closesurf");
-    var reloadsurf = document.getElementById("reloadsurf");
-    var opensurf = document.getElementById("opensurf");
     var controls = document.getElementById("controls");
     var header = document.getElementById("header");
     var particles = document.getElementById("particles-js");
@@ -67,9 +64,6 @@ function pxyopen(url) {
     particles.style.display = "none";
     controls.style.display = "flex";
     surf.style.display = "initial";
-    closesurf.style.display = "initial";
-    opensurf.style.display = "initial";
-    reloadsurf.style.display = "initial";
     surf.setAttribute("src", getproxy(url));
     document.getElementById("search").value = "";
   } else {
@@ -104,9 +98,7 @@ window.onload = function () {
 
 function closesurf() {
   var surf = document.getElementById("surf");
-  var closesurf = document.getElementById("closesurf");
-  var reloadsurf = document.getElementById("reloadsurf");
-  var opensurf = document.getElementById("opensurf");
+  
   var controls = document.getElementById("controls");
   var navtitle = document.getElementById("nav-title");
   var header = document.getElementById("header");
@@ -115,9 +107,7 @@ function closesurf() {
   particles.style.display = "block";
   controls.style.display = "none";
   surf.style.display = "none";
-  closesurf.style.display = "none";
-  reloadsurf.style.display = "none";
-  opensurf.style.display = "none";
+  
   surf.setAttribute("src", "");
   navtitle.innerText = "Loading...";
 }
