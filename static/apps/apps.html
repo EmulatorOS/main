@@ -32,7 +32,7 @@
         </div>
 <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/uv.js', {
+            navigator.serviceWorker.register('/sw.js', {
                 scope: '/'
             }).then(() => {
               let url = atob(
