@@ -2,22 +2,17 @@
     {
     "title": "YouTube",
     "image": "/apps/images/yt.png",
-    "location": "/apps/apps.html#aHR0cHM6Ly93d3cueW91dHViZS5jb20="
+    "location": "/apps/apps.html#youtube.com"
     },
     {
         "title": "Spotify",
         "image": "/apps/images/spot.png",
-        "location": "/apps/apps.html#aHR0cHM6Ly9vcGVuLnNwb3RpZnkuY29t"
-    },
-    {
-        "title": "Twitter",
-        "image": "/apps/images/twt.png",
-        "location": "/apps/apps.html#aHR0cHM6Ly90d2l0dGVyLmNvbS9leHBsb3Jl"
+        "location": "/apps/apps.html#spotify.com"
     },
     {
         "title": "Reddit",
         "image": "/apps/images/rt.png",
-        "location": "/apps/apps.html#aHR0cHM6Ly9yZWRkaXQuY29t"
+        "location": "/apps/apps.html#reddit.com"
     },
     {
         "title": "Twitch",
@@ -32,21 +27,17 @@
     {
         "title": "Tik Tok",
         "image": "/apps/images/tt.jpg",
-        "location": "/apps/apps.html#dGlrdG9rLmNvbQ=="
+        "location": "/apps/apps.html#tiktok.com"
     },
-    {
-        "title": "CoolMathGames",
-        "image": "/apps/images/cmg.png",
-        "location": "/apps/apps.html#aHR0cHM6Ly93d3cuY29vbG1hdGhnYW1lcy5jb20="
-    },
+   
     {
         "title": "Geforce Now",
         "image": "/apps/images/gfnow.png",
-        "location": "/apps/apps.html#aHR0cHM6Ly9wbGF5LmdlZm9yY2Vub3cuY29t"
+        "location": "/apps/apps.html#https://play.geforcenow.com/mall/"
         },
         {
             "title": "Y8",
             "image": "/apps/images/y8.png",
-            "location": "/apps/apps.html#aHR0cHM6Ly93d3cueTguY29t"
+            "location": "/apps/apps.html#y8.com"
         }
 ]
