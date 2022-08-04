@@ -1,3 +1,9 @@
+if (localStorage.getItem("proxy") == null) {
+  localStorage.setItem("proxy", 'Ultraviolet');
+}
+if (localStorage.getItem("search") == null) {
+  localStorage.setItem("search", 'Google');
+}
 if (localStorage.getItem("appearance") == "neon") {
   var cssElm = document.createElement("link");
   cssElm.setAttribute("href", "/neon.css");
