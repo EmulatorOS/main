@@ -133,7 +133,11 @@ function fullscreensurf() {
 }
 function opensurf() {
   var url = document.getElementById("surf").src;
+  
   var tabOrWindow = window.open(url, '_blank');
+  closesurf();
+  console.log('open in new tab')
+  
    tabOrWindow.focus();
 }
 var currentproxy = localStorage.getItem("proxy");
