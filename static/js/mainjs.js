@@ -110,7 +110,6 @@ function closesurf() {
   surf.setAttribute("src", "");
   navtitle.innerText = "Loading...";
   document.title = 'EmulatorOS';
-  document.querySelector("link[rel=shortcut icon]").href = 'assets/icon.png';
   document.querySelector("link[rel=icon]").href = 'assets/icon.png';
 }
 
@@ -126,7 +125,7 @@ function fullscreensurf() {
 
 function opensurf() {
   var blank = localStorage.getItem("aboutBlankCloaking");
-  if (blank == true) {
+  if (blank == 'true') {
     console.log('blank')
     var url = document.getElementById("surf").src;
     win = window.open();
