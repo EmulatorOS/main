@@ -123,7 +123,28 @@ function fullscreensurf() {
   var surf = document.getElementById("surf");
   surf.contentWindow.location.reload();
 }
+
 function opensurf() {
+  var blank = localStorage.getItem("aboutBlankCloaking");
+  if (blank == true) {
+    console.log('blank')
+    var url = document.getElementById("surf").src;
+    win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            console.log(iframe.src)
+            win.document.body.appendChild(iframe)
+            closesurf();
+  }
+
+  else {
+    console.log('else')
   var url = document.getElementById("surf").src;
   
   var tabOrWindow = window.open(url, '_blank');
@@ -131,6 +152,7 @@ function opensurf() {
   console.log('open in new tab')
   
    tabOrWindow.focus();
+  }
 }
 var currentproxy = localStorage.getItem("proxy");
 var rhodium = document.getElementById("rhodium");

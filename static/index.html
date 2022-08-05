@@ -10,6 +10,7 @@
 
 <link rel="icon" type="image/x-icon" href="log.png">
 <link rel="shortcut icon" type="image/x-icon" href="log.png">
+<link href="full.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://emulatoros.github.io/main.css">
 
@@ -44,7 +45,11 @@
     body {
       font-family: Syne, sans-serif
     }
-
+    .form-control {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
     container {
       width: 100%;
       padding-right: 15px;
@@ -677,6 +682,129 @@ padding-left: 10px;
 .sugg:hover {
 color: var(--highlight);
 }
+.form-index{position: relative;z-index:2;background:0 0;font-family:inherit;padding:0 17px;height:48px;border:1px solid rgb(255,255,255,.2);color:var(--text-color);border-radius:3px;outline:0;width:350px;margin-top:5px;border-radius:50px;color:#fff
+                 }
+      #gifs-rows img{cursor:pointer}#gifs-rows .gif-file{display:none}.checkbox {
+    --chkbg: var(--bc);
+    --chkfg: var(--b1);
+    height: 1.5rem;
+    width: 1.5rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    border-width: 1px;
+    border-color: hsl(var(--bc)/var(--tw-border-opacity));
+    --tw-border-opacity: .2;
+    border-radius: var(--rounded-btn, .5rem);
+    flex-shrink: 0
+}
+    .checkbox:focus-visible {
+    outline: 2px solid hsl(var(--bc));
+    outline-offset: 2px
+}
+
+.checkbox:checked,
+.checkbox[checked=true] {
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--bc)/var(--tw-bg-opacity));
+    animation: checkmark var(--animation-input, .2s)ease-in-out;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(-45deg, transparent 65%, hsl(var(--chkbg))65.99%), linear-gradient(45deg, transparent 75%, hsl(var(--chkbg))75.99%), linear-gradient(-45deg, hsl(var(--chkbg))40%, transparent 40.99%), linear-gradient(45deg, hsl(var(--chkbg))30%, hsl(var(--chkfg))30.99%, hsl(var(--chkfg))40%, transparent 40.99%), linear-gradient(-45deg, hsl(var(--chkfg))50%, hsl(var(--chkbg))50.99%)
+}
+
+.checkbox:indeterminate {
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--bc)/var(--tw-bg-opacity));
+    animation: checkmark var(--animation-input, .2s)ease-in-out;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, transparent 80%, hsl(var(--chkbg))80%), linear-gradient(-90deg, transparent 80%, hsl(var(--chkbg))80%), linear-gradient(0deg, hsl(var(--chkbg))43%, hsl(var(--chkfg))43%, hsl(var(--chkfg))57%, hsl(var(--chkbg))57%)
+}
+
+.checkbox-primary {
+    --chkbg: var(--p);
+    --chkfg: var(--pc);
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--p)/var(--tw-border-opacity))
+}
+
+.checkbox-primary:hover {
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--p)/var(--tw-border-opacity))
+}
+
+.checkbox-primary:focus-visible {
+    outline: 2px solid hsl(var(--p))
+}
+
+.checkbox-primary:checked,
+.checkbox-primary[checked=true] {
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--p)/var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--p)/var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: hsl(var(--pc)/var(--tw-text-opacity))
+}
+
+.checkbox-secondary {
+    --chkbg: var(--s);
+    --chkfg: var(--sc);
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--s)/var(--tw-border-opacity))
+}
+
+.checkbox-secondary:hover {
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--s)/var(--tw-border-opacity))
+}
+
+.checkbox-secondary:focus-visible {
+    outline: 2px solid hsl(var(--s))
+}
+
+.checkbox-secondary:checked,
+.checkbox-secondary[checked=true] {
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--s)/var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--s)/var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: hsl(var(--sc)/var(--tw-text-opacity))
+}
+
+.checkbox-accent {
+    --chkbg: var(--a);
+    --chkfg: var(--ac);
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--a)/var(--tw-border-opacity))
+}
+
+.checkbox-accent:hover {
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--a)/var(--tw-border-opacity))
+}
+
+.checkbox-accent:focus-visible {
+    outline: 2px solid hsl(var(--a))
+}
+
+.checkbox-accent:checked,
+.checkbox-accent[checked=true] {
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--a)/var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--a)/var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: hsl(var(--ac)/var(--tw-text-opacity))
+}
+
+.checkbox:disabled {
+    cursor: not-allowed;
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--bc)/var(--tw-bg-opacity));
+    opacity: .2;
+    border-color: #0000
+}
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -701,6 +829,12 @@ color: var(--highlight);
       <div onclick="setproxy('Corrosion')" class="proxy" id="corrosion">Co&#173;rro&#173;sion</div>
       <div onclick="setproxy('Rhodium')" class="proxy" id="rhodium">Rh&#173;od&#173;ium</div>
     </div>
+    <div class="form-control">
+      <label class="label cursor-pointer">
+        <span class="label-text">About : Blank Cloaking</span> 
+        <input id="aboutBlankCloaking"type="checkbox" class="toggle" unchecked onclick="aboutBlankCloaking();">
+      </label>
+    </div>
 
   </center>
 
@@ -720,7 +854,30 @@ color: var(--highlight);
     <div class="nav-button" onclick="closesurf()">close</div>
     
   </div>
+<script>
+  function aboutBlankCloaking() {
+    if (document.getElementById("aboutBlankCloaking").checked) {
 
+        localStorage.setItem('aboutBlankCloaking', 'true');
+
+    } else {
+
+        localStorage.setItem('aboutBlankCloaking', 'false');
+    }
+
+}
+
+(function() {
+    if (localStorage.getItem('aboutBlankCloaking') === 'true') {
+
+        document.getElementById("aboutBlankCloaking").checked = true;
+
+
+    } else {
+        document.getElementById("aboutBlankCloaking").checked = false;
+    }
+})();
+</script>
   <div id="particles-js"></div>
   <div id="squares"></div>
   <script src="uv/uv.bundle.js"></script>
