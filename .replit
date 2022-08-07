@@ -1,3 +1,6 @@
 language = "nodejs"
 run = "bash main.sh"
 onBoot = "chmod +x main.sh"
+
+[nix]
+channel = "stable-22_05"
