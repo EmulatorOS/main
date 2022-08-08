@@ -22,6 +22,7 @@ fi
 fi
 }
 function deb {
+npm i
   nodeCheck=$(node -v)
   apt --yes update
   if [ "$nodeCheck" != "" ]; then
@@ -53,6 +54,12 @@ fi
     "echo" "-e" "Installing Git"
     apt --yes install git  
 fi
+"versions"
 }
-
-npm start "deb"|| [[ $fix = 1 ]] && npm install && npm update && git submodule update --init --recursive
+function versions {
+nodeCheck=$(node -v)
+check=$(git --version)
+"echo" "-e" "node version is " "$nodeCheck"
+"echo" "-e" "Git version is " "$check"
+}
+"deb"  npm start 
