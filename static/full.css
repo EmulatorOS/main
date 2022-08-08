@@ -2122,39 +2122,7 @@ html {
     opacity: 1
 }
 
-.footer {
-    width: 100%;
-    grid-auto-flow: row;
-    place-items: start;
-    gap: 2.5rem 1rem;
-    font-size: .875rem;
-    line-height: 1.25rem;
-    display: grid
-}
 
-.footer>* {
-    place-items: start;
-    gap: .5rem;
-    display: grid
-}
-
-.footer-center {
-    text-align: center;
-    place-items: center
-}
-
-.footer-center>* {
-    place-items: center
-}
-
-@media (min-width:48rem) {
-    .footer {
-        grid-auto-flow: column
-    }
-    .footer-center {
-        grid-auto-flow: dense
-    }
-}
 
 .form-control {
     flex-direction: column;
@@ -3880,12 +3848,7 @@ body[dir=rtl] .checkbox[checked=true] {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y))rotate(var(--tw-rotate))skewX(var(--tw-skew-x))skewY(var(--tw-skew-y))scaleX(var(--tw-scale-x))scaleY(var(--tw-scale-y))
 }
 
-.footer-title {
-    text-transform: uppercase;
-    opacity: .5;
-    margin-bottom: .5rem;
-    font-weight: 700
-}
+
 
 .label-text {
     --tw-text-opacity: 1;
