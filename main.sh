@@ -22,7 +22,7 @@ fi
 fi
 }
 function deb {
-npm i
+npm install
   nodeCheck=$(node -v)
   apt --yes update
   if [ "$nodeCheck" != "" ]; then
@@ -61,5 +61,6 @@ nodeCheck=$(node -v)
 check=$(git --version)
 "echo" "-e" "node version is " "$nodeCheck"
 "echo" "-e" "Git version is " "$check"
+npm start 
 }
-"deb"  npm start 
+"deb"  
