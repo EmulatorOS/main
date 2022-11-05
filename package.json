@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@tomphttp/bare-server-node": "^1.0.2-beta-readme2",
     "acorn-hammerhead": "^0.6.1",
     "bare-server-node": "github:tomphttp/bare-server-node",
     "css-tree": "^2.2.1",
@@ -16,7 +17,7 @@
     "start": "node ."
   },
   "keywords": [
-    "test"
+    "proxy"
   ],
   "author": "",
   "license": "GPL-3.0-or-later"
