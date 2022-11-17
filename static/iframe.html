@@ -1,8 +1,10 @@
-<div>
     <iframe src=""></iframe>
-</div>
 <script>
-    const iframe = document.getElementsByTagName('iframe')
-    iframe.src = 'apps/apps.html' + decodeURIComponent(window.location.hash.slice(1))
-                ;
+    const iframe = document.getElementsByTagName('iframe');
+    iframe.style.border = 'none';
+      iframe.style.width = '100vw';
+      iframe.style.height = '100vh';
+      iframe.style.margin = '0';
+    iframe.src = 'apps/apps.html' + decodeURIComponent(window.location.hash.slice(1));
+    
 </script>
