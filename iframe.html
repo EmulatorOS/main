@@ -1,0 +1,8 @@
+<div>
+    <iframe src=""></iframe>
+</div>
+<script>
+    const iframe = document.getElementsByTagName('iframe')
+    iframe.src = 'apps/apps.html' + decodeURIComponent(window.location.hash.slice(1))
+                ;
+</script>
