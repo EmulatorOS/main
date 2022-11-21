@@ -1,3 +1,4 @@
+<html>
 <head>
         
         <script src="//cdn.jsdelivr.net/npm/eruda"></script>
@@ -26,8 +27,8 @@
       iframe.style.width = '100vw';
       iframe.style.height = '100vh';
       iframe.style.margin = '0';
-    iframe.src = 'apps/apps.html#' + window.location.hash.slice(1);
-    let url = '/service/' + decodeURIComponent(window.location.hash.slice(1)
+    iframe.src = 'apps/apps.html#' + decodeURIComponent(window.location.hash.slice(1));
+    let url = __uv$config.prefix + __uv$config.encodeUrl(decodeURIComponent(window.location.hash.slice(1)));
     setInterval(function () {
     if (iframe.src === url) {
     console.log('src is' + iframe.src);
@@ -36,3 +37,4 @@
     }, 1000);
     </script>
 </body>
+</html>
