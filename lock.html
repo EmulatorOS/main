@@ -1,0 +1,35 @@
+<head>
+<diV>	    <style type="text/css">
+        body, html
+        {
+            margin: 0; padding: 0; height: 100%; overflow: hidden;
+        }
+
+        #content
+        {
+            position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/BinBashBanana/erudesktop@master/dist/eruda.js"></script>
+<script>eruda.init();</script>
+</head>
+<body>
+    <div id="content">
+        <iframe width="100%" height="100%" frameborder="0" src="hi"></iframe>
+    </div>
+    <script>
+    var iframe = document.getElementById('iframe');
+    iframe.style.border = 'none';
+      iframe.style.width = '100vw';
+      iframe.style.height = '100vh';
+      iframe.style.margin = '0';
+    iframe.src = 'apps/apps.html#' + window.location.hash.slice(1);
+    let url = '/service/' + decodeURIComponent(window.location.hash.slice(1)
+    setInterval(function () {
+    if (iframe.src === url) {
+    console.log('src is' + iframe.src);
+    console.log('url is' + url)
+    }
+    }, 1000);
+    </script>
+</body>
