@@ -27,7 +27,19 @@ app.get("/", function(req, res){
 app.set('trust proxy', 1)
 
 // Enable cors
+const allowedOrigins = ['emulatoros.github.io',
+                      'emulatoros2.github.io'];
+app.use(cors({
+  origin: function(origin, callback){
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
 
+}));
 // Set static folder
 app.use(express.static('public'))
 
