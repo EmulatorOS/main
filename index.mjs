@@ -1,29 +1,51 @@
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 import createServer from '@tomphttp/bare-server-node';
-import http from 'http';
-import nodeStatic from 'node-static';
-
+const cors = require('cors')
+const rateLimit = require('express-rate-limit')
+require('dotenv').config()
 
 const bare =  createServer('/bare/');
-const serve = new nodeStatic.Server('static/');
 
-const server = http.createServer();
+const express = require("express")
+const app = express()
 
-server.on('request', (req, res) => {
-    if (bare.shouldRoute(req)) {
-		bare.routeRequest(req, res);
-	} else {
-		serve.serve(req, res);
-	}
+app.use(express.static("./static", {
+    extensions: ["html"]
+})); 
+const options = {
+    
+    target: {
+        https: true
+    }
+}
+app.get("/", function(req, res){
+    res.sendFile("index.html", {root: "./static"});
 });
 
-server.on('upgrade', (req, socket, head) => {
-	if (bare.shouldRoute(req, socket, head)) {
-		bare.routeUpgrade(req, socket, head);
-	}else{
-		socket.end();
-	}
-});
 
-server.listen({
-	port: process.env.PORT || 8080,
-});
+app.set('trust proxy', 1)
+
+// Enable cors
+app.use(cors())
+
+// Set static folder
+app.use(express.static('public'))
+
+// Routes
+app.use('/api', require('./route.js'))
+app.use("/today", require("./today.js"))
+
+app.use(function (req, res) {
+     if (req.url.startsWith("/bare/")) {
+      return bare.route_request(req, res)
+    } else {
+      res.status(404).sendFile("404.html", {root: "./public"});
+    
+    }
+
+})
+
+app.listen(8080, () => {
+  console.log(`EmulatorOS is running at localhost:8080`)
+})

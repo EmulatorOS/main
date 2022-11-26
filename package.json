@@ -2,8 +2,14 @@
   "dependencies": {
     "@tomphttp/bare-server-node": "^1.0.2-beta-readme2",
     "acorn-hammerhead": "^0.6.1",
+    "apicache": "^1.6.3",
     "bare-server-node": "github:tomphttp/bare-server-node",
+    "cors": "^2.8.5",
     "css-tree": "^2.2.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "http-proxy": "^1.18.1",
+    "needle": "^3.2.0",
     "node-static": "^0.7.11",
     "parse5": "^7.1.1",
     "webpack": "^5.74.0"
