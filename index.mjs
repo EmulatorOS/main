@@ -45,7 +45,6 @@ app.use(function (req, res) {
     }
 
 })
-
-app.listen(8080, () => {
-  console.log(`EmulatorOS is running at localhost:8080`)
-})
+app.listen({
+ 	port: process.env.PORT || 8080,
+ });
