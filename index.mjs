@@ -46,7 +46,7 @@ app.use(express.static('public'))
 
 // Routes
 app.use('/api', require('./route.js'))
-app.use("/today", require("./today.js"))
+app.use("/flags", require("./flags.js"))
 
 app.use(function (req, res) {
      if (req.url.startsWith("/bare/")) {
