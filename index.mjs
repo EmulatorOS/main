@@ -50,7 +50,7 @@ app.use("/flags", require("./flags.js"))
 
 app.use(function (req, res) {
      if (req.url.startsWith("/bare/")) {
-      return bare.route_request(req, res)
+      return bare.routeRequest(req, res)
     } else {
       res.status(404).sendFile("404.html", {root: "./public"});
     
