@@ -19,10 +19,6 @@ const options = {
         https: true
     }
 }
-app.get("/", function(req, res){
-    res.sendFile("index.html", {root: "./static"});
-});
-
 
 app.set('trust proxy', 1)
 
