@@ -36,6 +36,7 @@
             navigator.serviceWorker.register('/sw.js', {
                 scope: '/'
             }).then(() => {
+              console.log('registered')
               let url = 
                     decodeURIComponent(window.location.hash.slice(1))
                 ;
