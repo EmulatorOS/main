@@ -49,14 +49,29 @@ app.use('/api', require('./route.js'))
 app.use("/flags", require("./flags.js"))
 
 app.use(function (req, res) {
-     if (req.url.startsWith("/bare/")) {
-      return bare.routeRequest(req, res)
+  try {
+    if (bare.shouldRoute(request)) {
+      bare.routeRequest(request, response)
     } else {
       res.status(404).sendFile("404.html", {root: "./public"});
     
     }
+  } catch (e) {
+    response.writeHead(500, "Internal Server Error", {
+      "Content-Type": "text/plain",
+    })
+    response.end(e.stack)
+  }
 
 })
-app.listen({
- 	port: process.env.PORT || 8080,
+
+ const server = app.listen({
+  port: process.env.PORT || 8080,
+});
+ server.on('upgrade', (request, socket, head) => {
+  if (bare.shouldRoute(req)) {
+    bare.routeUpgrade(req, socket, head)
+  } else {
+    socket.end()
+  }
  });
