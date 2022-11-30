@@ -50,8 +50,8 @@ app.use("/flags", require("./flags.js"))
 
 app.use(function (req, res) {
   try {
-    if (bare.shouldRoute(request)) {
-      bare.routeRequest(request, response)
+    if (bare.shouldRoute(req)) {
+      bare.routeRequest(req, res)
     } else {
       res.status(404).sendFile("404.html", {root: "./public"});
     
@@ -68,7 +68,7 @@ app.use(function (req, res) {
  const server = app.listen({
   port: process.env.PORT || 8080,
 });
- server.on('upgrade', (request, socket, head) => {
+ server.on('upgrade', (req, socket, head) => {
   if (bare.shouldRoute(req)) {
     bare.routeUpgrade(req, socket, head)
   } else {
