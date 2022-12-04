@@ -28,9 +28,6 @@ app.use(cors({
   origin: '*'
 
 }));
-// Set static folder
-app.use(express.static('public'))
-
 // Routes
 app.use('/api', require('./route.js'))
 app.use("/flags", require("./flags.js"))
@@ -40,7 +37,7 @@ app.use(function (req, res) {
     if (bare.shouldRoute(req)) {
       bare.routeRequest(req, res)
     } else {
-      res.status(404).sendFile("404.html", {root: "./public"});
+      res.status(404).sendFile("404.html", {root: "./static"});
     
     }
   } catch (e) {
