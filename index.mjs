@@ -29,8 +29,6 @@ app.use(cors({
 
 }));
 // Routes
-app.use('/api', require('./route.js'))
-app.use("/flags", require("./flags.js"))
 
 app.use(function (req, res) {
   try {
