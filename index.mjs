@@ -1,9 +1,8 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
+"use strict";
+ 
 import createServer from '@tomphttp/bare-server-node';
 const cors = require('cors')
-const rateLimit = require('express-rate-limit')
-require('dotenv').config()
+
 
 const bare =  createServer('/bare/');
 
