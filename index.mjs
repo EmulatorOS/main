@@ -1,4 +1,5 @@
-"use strict";
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
  
 import createServer from '@tomphttp/bare-server-node';
 const cors = require('cors')
